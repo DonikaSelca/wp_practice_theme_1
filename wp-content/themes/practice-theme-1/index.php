@@ -8,11 +8,11 @@
           <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"> <?php the_title() ?> </a>
         </h2>
         <div>
-          <?php firstTheme_post_meta(); ?>
+          <?php _themename_post_meta(); ?>
         </div>
         <div>
           <?php the_excerpt(); ?>
-          <?php firstTheme_readMore_link(); ?>
+          <?php _themename_readMore_link(); ?>
         </div>
     <?php } ?>
     <?php the_posts_pagination() ?>
