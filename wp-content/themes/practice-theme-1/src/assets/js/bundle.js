@@ -1,8 +1,3 @@
-import './components/slider';
 import $ from 'jquery';
-
-let x = 0;
-
-$('body').click(() => {
-  alert(true)
-})
+import './components/slider';
+import './components/navigation';

@@ -83,12 +83,6 @@ export const copy = () => {
     .pipe(gulp.dest(paths.other.dest));
 }
 
-// export const scripts = () => {
-//   return gulp.src(paths.scripts.src)
-//     .pipe(webpack())
-//     .pipe(gulp.dest(paths.scripts.dest));
-// }
-
 export const scripts = () => {
     return gulp.src(paths.scripts.src)
         .pipe(named())
@@ -99,7 +93,7 @@ export const scripts = () => {
 			              use: {
                       loader: 'babel-loader',
 			                options: {
-                        presets: ['@babel/preset-env'] //or ['babel-preset-env']
+                        presets: ['@babel/preset-env']
 				              }
 			              }
 		            }]
@@ -111,9 +105,8 @@ export const scripts = () => {
                jquery: 'jQuery'
              },
 	           devtool: !PRODUCTION ? 'inline-source-map' : false,
-             mode: PRODUCTION ? 'production' : 'development' //add this
+             mode: PRODUCTION ? 'production' : 'development'
 	        }))
-	        // .pipe(gulpif(PRODUCTION, uglify())) //you can skip this now since mode will already minify
 	        .pipe(gulp.dest(paths.scripts.dest));
     }
 
