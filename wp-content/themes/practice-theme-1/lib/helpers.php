@@ -1,9 +1,12 @@
 <?php
+// Function that dispays the date and author of a post (the helpers are compartmentalized pieces of the entire post)
   function _themename_post_meta() {
     // Translators: %s: Post Date
     printf(
       esc_html__('Posted on %s ', '_themename'),
+// Time tag allows for any format bc it's read by humans but datetime tag is read by computers and needs specific format
       '<a href="'. esc_url(get_permalink()).'"><time datetime="'. esc_attr(get_the_date('c')).'">'
+      // Get the date template tag doesn't get format bc it's chosen by user in wp-admin - hardcoding would force user to display it one way
       .esc_html(get_the_date()).'</time></a>'
     );
     // Translators: %s: Post Author
@@ -13,6 +16,7 @@
     );
   }
 
+// Function that displays the permalink(posts page) and title as a link to read more
   function _themename_readMore_link() {
     echo '<a class="c-post__readmore" href="'.esc_url(get_the_permalink()).'" title="'.the_title_attribute(['echo'=> false]).'">';
     // Translators: %s: Post Title
@@ -30,3 +34,16 @@
     echo '</a>';
   }
 ?>
+
+<!--  Internationalization and Localization -->
+<!--  esc_ : the_permalink is already escaped by WP ...esc escapes any potentially harmful code by barring user from injecting code-->
+<!--  __ translates stings and returns value (doesn't allow variables but can be wrapped in a printf function)
+      _e will translate sting and echo it (doesn't allow variables but also can be wrapped in printf)
+<!-   printf prints a formateed string so we are allowed to insert variables into a string
+        variable is represented by % and the type of placeholder. ie %s for string variable or %d for digits.
+        printf will echo itself. The second arguement to printf is the dynamic element being replaced with % -->
+<!--  sprintf does the same as printf but does not echo -->
+<!--  esc_html_e escapes and translates html ... should be used bc translators can also inject scripts in code. -->
+<!--  esc_html__ escapes html and translates however doesn't echo and doesn't allow variables -->
+<!--  wp_kses escapes html and also allows for html thats been declared as a second argument within an array to act as exceptions for translated strings
+         ie ['span' => ['class'=>[]]] The array contains keys of html tags to allow, each with it's own array of allowed attributes. -->

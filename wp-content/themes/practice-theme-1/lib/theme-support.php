@@ -1,5 +1,5 @@
+ <!-- after_setup_theme is used to add features that are not supported by default in WP. -->
 <?php
-
   function _themename_theme_support(){
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');

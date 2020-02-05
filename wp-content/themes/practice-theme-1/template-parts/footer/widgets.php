@@ -1,7 +1,12 @@
+<!--  Sets the footer sidebar layout. Explode comma seperates numbers. Loops through the columns
+and sets the widget to active if a sidebar exists-->
+<!-- Template files create the markup for your site ie get footer is template file but get post is template tag-->
+<!-- template files are php file in the root folder of your project, the hierarchy of WP decides which to display -->
 <?php
   $footer_layout = '3,3,3,3';
   $columns = explode(',', $footer_layout);
   $footer_bg = 'dark';
+  // Presets $widget_active to false, loops through columns and sets variable to true if sidebar active
   $widget_active = false;
   foreach($columns as $i => $column){
     if(is_active_sidebar('footer-sidebar-' . ($i + 1))){
@@ -9,6 +14,8 @@
     }
   }
 ?>
+
+<!-- Checks if widget_active is true and displays the sidebar dynamically at it's index + 1 -->
 <?php if($widget_active){ ?>
   <div class="c-footer c-footer-<?php echo $footer_bg ?>">
     <div class="o-container">

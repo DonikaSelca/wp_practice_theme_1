@@ -35,6 +35,7 @@ $('.c-navigation').on('click', '.menu .menu-button', (e)=>{
   }
 })
 
+// Closes any open nav menus when someone clicks outside menu by triggering the click event that closes a menu
 $(document).click((e)=>{
   if($('.menu-item.open').length) {
     $('.menu>.menu-item.open>a>.menu-button').trigger('click');

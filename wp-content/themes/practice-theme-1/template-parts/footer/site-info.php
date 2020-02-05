@@ -1,3 +1,4 @@
+<!-- Establishes site info at bottom of screen as template partial -->
 <?php $footer_bg = 'dark'; ?>
 <div class="c-site-info c-site-info--<?php echo $footer_bg ?>">
   <div class="o-container">
