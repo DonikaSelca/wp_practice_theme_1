@@ -5,7 +5,7 @@ and sets the widget to active if a sidebar exists-->
 <?php
   $footer_layout = '3,3,3,3';
   $columns = explode(',', $footer_layout);
-  $footer_bg = 'dark';
+  $footer_bg = _themename_sanitize_footer_bg(get_theme_mod('_themename_footer_bg', 'dark'));
   // Presets $widget_active to false, loops through columns and sets variable to true if sidebar active
   $widget_active = false;
   foreach($columns as $i => $column){

@@ -16,7 +16,7 @@
   $footer_layout = '3,3,3,3';
   // Explode takes as args: separator and string
   $columns = explode(',', $footer_layout);
-  $footer_bg = 'dark';
+  $footer_bg = _themename_sanitize_footer_bg(get_theme_mod( '_themename_footer_bg', 'dark' ));
   $widget_theme = '';
   if($footer_bg == 'light'){
     $widget_theme = 'c-footer-widget--dark';
