@@ -1,4 +1,3 @@
- /* Gulp needs babel in order to compile newer forms of javascript syntax */
 {
   "presets": ["@babel/preset-env"]
 }

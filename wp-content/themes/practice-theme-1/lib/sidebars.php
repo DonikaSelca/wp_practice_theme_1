@@ -13,7 +13,8 @@
   }
 
   // Explodes the footer layout into array of comma serperated columns (Any increment up to 12) and creates an alternating color choice of footer background
-  $footer_layout = '3,3,3,3';
+  $footer_layout = sanitize_text_field(get_theme_mod('_themename_footer_layout', '3,3,3,3'));
+  $footer_layout = preg_replace('/\s+/', '', $footer_layout);
   // Explode takes as args: separator and string
   $columns = explode(',', $footer_layout);
   $footer_bg = _themename_sanitize_footer_bg(get_theme_mod( '_themename_footer_bg', 'dark' ));
@@ -41,4 +42,4 @@
   }
   // When widgets initializes, we need to run this function
   add_action('widgets_init', '_themename_sidebar_widgets');
- ?>
+?>

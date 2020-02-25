@@ -1,5 +1,5 @@
-<!-- Displays main content and deliniates screen width if there is a sidebar active -->
 <?php get_header(); ?>
+<!-- Displays main content and deliniates screen width if there is a sidebar active -->
   <div class="o-container u-margin-bottom-40">
     <div class="o-row">
       <!--  Theme should adapt to fill space... following checks if there is a sidebar active and adapts div to fit width of screen. -->

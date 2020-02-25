@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- Adds language attributes, charset and title(wp_head) dynamically -->
 <html <?php language_attributes() ?> >
+<!-- Adds language attributes, charset and title(wp_head) dynamically -->
   <head>
     <meta charset="<?php bloginfo('charset')?>;">
     <?php wp_head() ?>
@@ -12,8 +12,11 @@
       <div class="c-header">
         <div class="o-container u-flex u-align-justify u-align-middle">
           <div class="c-header__logo">
-            <a class="c-header__blogname" href="<?php echo esc_url(home_url('/'));?>">
-              <?php esc_html(bloginfo('name')); ?></a>
+            <?php if(has_custom_logo()){
+              the_custom_logo();
+            } else { ?>
+            <a class="c-header__blogname" href="<?php echo esc_url(home_url('/'));?>"><?php esc_html(bloginfo('name')); ?></a>
+          <?php } ?>
           </div>
           <!-- get_search_form takes as arg a boolean of whether to echo so we give it value of true. -->
           <!-- Also generates html for search form but first looks for template file called seachform.php -->

@@ -1,9 +1,11 @@
-<!-- Includes stylesheets, jquery and scripts into project. -->
 <?php
+// <!-- Includes stylesheets, jquery and scripts into project. -->
   function _themename_assets(){
     // ('unique-name-for-stylesheet', 'source which is appended path for the file', array() of dependencies, version, media = 'all' for all media queries )
     wp_enqueue_style('_themename-stylesheet', get_template_directory_uri().
     '/dist/assets/css/bundle.css', array(), '1.0.0', 'all');
+    include(get_template_directory() . '/lib/inline-css.php');
+    wp_add_inline_style('_themename-stylesheet', $inline_styles);
     // jquery is enqueued this way bc it is included in the wordpress core (Can also be added as an array of dependencies in scripts below).
     wp_enqueue_script('jquery');
     // enqueueing scripts is same arguements except for final. It's a boolean that determins where the script is going to go. True is declaring yes put it in the footer.
@@ -25,8 +27,9 @@
   function _themename_customize_preview_js(){
     wp_enqueue_script('_themename-customize-preview', get_template_directory_uri().
     '/dist/assets/js/customize-preview.js', array('customize-preview', 'jquery'), '1.0.0', true);
+    include(get_template_directory() . '/lib/inline-css.php');
+    wp_localize_script( '_themename-customize-preview', '_themename', array('inline-css' => $inline_styles_selectors));
   }
 
   add_action('customize_preview_init', '_themename_customize_preview_js');
-
 ?>

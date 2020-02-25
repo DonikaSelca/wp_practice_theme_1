@@ -1,5 +1,5 @@
-<!-- Displays archive page - Also establishes main content width depending on whether there is a primary sidebar active -->
 <?php get_header(); ?>
+<!-- Displays archive page - Also establishes main content width depending on whether there is a primary sidebar active -->
   <div class="o-container u-margin-bottom-40">
     <div class="o-row">
       <div class="o-row__column o-row__column--span-12">

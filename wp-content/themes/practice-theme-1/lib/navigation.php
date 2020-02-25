@@ -1,9 +1,9 @@
-<!-- Navigation-->
-<!-- Mega menu comes specifically from CSS -->
-<!-- When styling menus always use > symbol (styles direct child just in case you have children of an dropdown or submenu that have different styles.)
-      Also when styling submenus always use absolute positioning so they appear as block when menu is open -->
- <!-- Register different menu names and locations  -->
 <?php
+// <!-- Navigation-->
+// <!-- Mega menu comes specifically from CSS -->
+// <!-- When styling menus always use > symbol (styles direct child just in case you have children of an dropdown or submenu that have different styles.)
+//       Also when styling submenus always use absolute positioning so they appear as block when menu is open -->
+//  <!-- Register different menu names and locations  -->
   function _themename_registration_menus() {
     // Registers nav menus with an array of locations.
     register_nav_menus(array(

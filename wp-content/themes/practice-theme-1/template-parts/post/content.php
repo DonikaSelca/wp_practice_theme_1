@@ -1,6 +1,6 @@
-<!-- Template for displaying a post  -->
-<!-- * Mandatory: When giving a class to a post, list post_class (gives pre-set classes to post and takes other classes we want as arguement. -->
 <article <?php post_class('c-post u-margin-bottom-20') ?>>
+  <!-- Template for displaying a post  -->
+  <!-- * Mandatory: When giving a class to a post, list post_class (gives pre-set classes to post and takes other classes we want as arguement. -->
   <h2 class="c-post__title">
     <!--  The_title() is different from the_title_attribute in the the second is cleaned up to fit attribute criteria.
   Both display the title but attributes don't allow all characters (like quotes)-->
@@ -12,5 +12,6 @@
   <div class="c-post__excerpt">
     <?php the_excerpt(); ?>
     <?php _themename_readMore_link(); ?>
+    <?php echo _themename_delete_post(); ?>
   </div>
 </article>

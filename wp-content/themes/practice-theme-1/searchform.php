@@ -1,5 +1,5 @@
-<!-- Search form that's screen reader ready -->
 <form role="search" method="get" class="c-search-form" action="<?php echo esc_url(home_url('/')) ?>">
+  <!-- Search form that's screen reader ready -->
     <label class="c-search-form__label">
         <span class="screen-reader-text"><?php echo esc_html_x('Search for:','label','_themename') ?></span>
         <!-- Bc we use 's' for name WP knows and will display the search page template and filter the post against the search query
