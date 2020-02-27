@@ -151,7 +151,7 @@ export const scripts = () => {
 export const compress = () => {
   return gulp.src(paths.package.src)
     // Replaces _themename with what the name key is in the object in package.json
-    .pipe(replace('_themename', info.name))
+    .pipe(gulpif((file) => (file.relative.split('.').pop() !== 'zip'), replace('_themename', info.name)))
     // Allows us to have a dynamic placeholder in the zipped file. Now we can reuse files and functions as a template for new themes
     .pipe(zip(`${info.name}.zip`))
     .pipe(gulp.dest(paths.package.dest));
