@@ -23,7 +23,7 @@ button, input[type=submit] {
     padding: rem-calc(10 15);
     font-weight: 600;
     &:focus, &:hover {
-      background-color: $primary-colour-dim;
+        background-color: $primary-colour-dim;
     }
 }
 fieldset {

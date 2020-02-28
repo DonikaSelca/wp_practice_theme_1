@@ -1,25 +1,19 @@
 <?php
   $inline_styles_selectors = array(
     'a' => array(
-      'color' => '_themename_accent_color'
+      'color' => 'practice-theme-1_accent_color'
     ),
     ':focus' => array(
-      'outline-color' => '_themename_accent_color'
+      'outline-color' => 'practice-theme-1_accent_color'
     ),
     '.c-post.sticky' => array(
-      'border-left-color' => '_themename_accent_color'
+      'border-left-color' => 'practice-theme-1_accent_color'
     ),
     'button, input[type=submit], .header-nav .menu > .menu-item:not(.mega) .sub-menu .menu-item:hover > a' => array(
-      'background-color' => '_themename_accent_color'
-    ),
-    '.header-nav .menu > .menu-item.mega > .sub-menu > .menu-item > .sub-menu a:hover' => array(
-      'color' => '_themename_accent_color'
+      'background-color' => 'practice-theme-1_accent_color'
     ),
     '.header-nav .menu > .menu-item.mega .sub-menu .menu-item > a:hover' => array(
-      'color' => '_themename_accent_color'
-    ),
-    '.navigation.pagination .nav-links a:hover' => array(
-      'background-color' => '_themename_accent_color'
+      'color' => 'practice-theme-1_accent_color'
     )
   );
 
