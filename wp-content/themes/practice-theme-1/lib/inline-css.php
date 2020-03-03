@@ -20,6 +20,15 @@
     ),
     '.navigation.pagination .nav-links a:hover' => array(
       'background-color' => '_themename_accent_color'
+    ),
+    '::selection' => array(
+      'background-color' => '_themename_accent_color'
+    ),
+    'button.c-search-form__button:hover' => array(
+      'background-color' => '_themename_accent_color'
+    ),
+    'a:active' => array(
+      'color' => '_themename_accent_color'
     )
   );
 

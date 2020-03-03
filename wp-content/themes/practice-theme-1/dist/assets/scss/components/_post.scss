@@ -103,7 +103,6 @@
         }
     }
     .alignwide {
-        margin-left: -100px;
         margin-right: -100px;
         max-width: calc(50rem + 200px);
     }
@@ -119,7 +118,7 @@
     .wp-block-cover-image {
         &.alignwide, &.alignfull {
             width: auto;
-        } 
+        }
     }
 }
 .wp-block-embed.is-type-video {

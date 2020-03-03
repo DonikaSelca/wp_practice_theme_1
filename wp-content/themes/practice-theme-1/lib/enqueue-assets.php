@@ -11,6 +11,9 @@
     // enqueueing scripts is same arguements except for final. It's a boolean that determins where the script is going to go. True is declaring yes put it in the footer.
     wp_enqueue_script('_themename-scripts', get_template_directory_uri().
     '/dist/assets/js/bundle.js', array(), '1.0.0', true);
+    if(is_singular() && comments_open() && get_option('thread_comments')){
+      wp_enqueue_script( 'comment-reply');
+    }  
   }
   // adds action into hook args('action_name', 'function_name')
   add_action('wp_enqueue_scripts', '_themename_assets');
