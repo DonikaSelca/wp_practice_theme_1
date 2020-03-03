@@ -24,6 +24,7 @@
     <ul class="c-comments__list">
       <?php
         wp_list_comments( array(
+          'short_ping' => true,
           'avatar_size' => 200,
           'reply_text' => 'Reply',
           'callback' => '_themename_comment_callback'
