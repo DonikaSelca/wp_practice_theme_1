@@ -14,7 +14,7 @@
   <div class="c-post-author__content">
     <div class="c-post-author__title">
       <?php if($author_website) { ?>
-        <a target="_blank" href="<?php echo esc_url($author_website)?>">
+        <a target="_blank" href="<?php echo esc_url($author_website); ?>">
       <?php } ?>
       <?php echo esc_html($author_display);?>
       <?php if($author_website){ ?>
