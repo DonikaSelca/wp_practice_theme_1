@@ -2,23 +2,23 @@
   require_once get_template_directory() . '/lib/class-tgm-plugin-activation.php';
   // require_once get_template_directory() . '/lib/class-tgm-plugin-activation.php';
 
-  add_action( 'tgmpa_register', '_themename_register_required_plugins');
+  add_action( 'tgmpa_register', 'practice_theme_1_register_required_plugins');
 
-  function _themename_register_required_plugins(){
+  function practice_theme_1_register_required_plugins(){
     $plugins = array(
       array(
-        'name' => '_themename metaboxes',
-        'slug' => '_themename-metaboxes',
-        'source' => get_template_directory_uri() . '/lib/plugins/_themename-metaboxes.zip',
+        'name' => 'practice_theme_1 metaboxes',
+        'slug' => 'practice_theme_1-metaboxes',
+        'source' => get_template_directory_uri() . '/lib/plugins/practice_theme_1-metaboxes.zip',
         'required' => true,
         'version' => '1.0.0',
         'force-activation' => false,
         'force-deactivation' => false
       ),
       array(
-        'name' => '_themename shortcodes',
-        'slug' => '_themename-shortcodes',
-        'source' => get_template_directory_uri() . '/lib/plugins/_themename-shortcodes.zip',
+        'name' => 'practice_theme_1 shortcodes',
+        'slug' => 'practice_theme_1-shortcodes',
+        'source' => get_template_directory_uri() . '/lib/plugins/practice_theme_1-shortcodes.zip',
         'required' => true,
         'version' => '1.0.0',
         'force-activation' => false,

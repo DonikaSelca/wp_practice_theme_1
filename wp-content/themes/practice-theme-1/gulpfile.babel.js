@@ -34,7 +34,7 @@ const paths = {
     dest: 'dist/assets/js'
   },
   plugins: {
-    src: ['../../plugins/_themename-metaboxes/packaged/*'],
+    src: ['../../plugins/_themename-metaboxes/packaged/*', '../../plugins/_themename-shortcodes/packaged/*'],
     dest: 'lib/plugins'
   },
   other: {
@@ -45,7 +45,7 @@ const paths = {
     src: ['**/*', '!DS_Store', '!node_modules{,/**}', '!packaged{,/**}', '!src{,/**}', '!.babelrc', '!.gitignore', '!gulpfile.babel.js', '!package.json', '!package-lock.json' ],
     dest: 'packaged'
   }
-}
+};
 
 // Done needs to be called to let gulp know we are done with our task
 // export const is the new gulp.task (how to create a task in gulp, which is now directly exported)
@@ -56,13 +56,13 @@ export const serve = (done) => {
     proxy: "localhost:8888/practice-theme-1"
   })
   done();
-}
+};
 
 // Function to refresh browser.
 export const reload = (done) => {
   server.reload();
   done();
-}
+};
 
 // Deletes the dist folder. If there is a file in src that gets deleted it stays in dist, so
 // dumping the entire folder and recompiling is best practice.
@@ -88,14 +88,14 @@ export const styles = () => {
     .pipe(gulp.dest(paths.styles.dest))
     // BrowserSync automatically injects CSS into page without haveing to refresh the page. Don't need to call reload in watch task.
     .pipe(server.stream());
-}
+};
 
 // Task that minifies images
 export const images = () => {
   return gulp.src(paths.images.src)
   .pipe(gulpif(PRODUCTION, imagemin()))
   .pipe(gulp.dest(paths.images.dest));
-}
+};
 
 // Watches files for changes and restarts the server automatically
 export const watch = () => {
@@ -105,18 +105,18 @@ export const watch = () => {
   gulp.watch('**/*.php', reload);
   gulp.watch(paths.images.src, gulp.series(images, reload));
   gulp.watch(paths.other.src, gulp.series(copy, reload));
-}
+};
 
 // Copies files outside of css, js and images from src/assets to dist/assets folder
 export const copy = () => {
   return gulp.src(paths.other.src)
     .pipe(gulp.dest(paths.other.dest));
-}
+};
 
 export const copyPlugins = () => {
   return gulp.src(paths.plugins.src)
     .pipe(gulp.dest(paths.plugins.dest));
-}
+};
 
 export const scripts = () => {
     return gulp.src(paths.scripts.src)
@@ -154,17 +154,17 @@ export const scripts = () => {
           mode: PRODUCTION ? 'production' : 'development'
 	      }))
 	      .pipe(gulp.dest(paths.scripts.dest));
-}
+};
 
 // Creates a zip file for packaged production
 export const compress = () => {
   return gulp.src(paths.package.src)
     // Replaces _themename with what the name key is in the object in package.json
-    .pipe(gulpif((file) => (file.relative.split('.').pop() !== 'zip'), replace('_themename', info.name)))
+    .pipe(gulpif(file => file.relative.split('.').pop() !== "zip", replace("_themename", info.name)))
     // Allows us to have a dynamic placeholder in the zipped file. Now we can reuse files and functions as a template for new themes
     .pipe(zip(`${info.name}.zip`))
     .pipe(gulp.dest(paths.package.dest));
-}
+};
 
 // Cleans dist folder and reruns gulp compiling tasks with watch
 export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, copy), serve, watch);

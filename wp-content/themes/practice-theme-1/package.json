@@ -1,7 +1,7 @@
 {
-  "name": "practice-theme-1",
+  "name": "practice_theme_1",
   "version": "1.0.0",
-  "description": "First Theme",
+  "description": "practice_theme_1",
   "main": "index.js",
   "directories": {
     "lib": "lib"
