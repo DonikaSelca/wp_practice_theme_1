@@ -5,7 +5,7 @@
     <!--  Calling the global variable the post allows us to access a particular post with template tags-->
     <?php the_post(); ?>
     <!-- Template tags that start with "the" echo the results as opposed to "get" which simply returns the output -->
-    <?php get_template_part('template-parts/post/content'); ?>
+    <?php get_template_part('template-parts/post/content', get_post_format()); ?>
     <?php
       if(get_theme_mod( '_themename_display_author_info', true )){
         get_template_part('template-parts/single/author');

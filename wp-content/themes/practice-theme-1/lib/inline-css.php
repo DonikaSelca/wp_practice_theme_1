@@ -29,6 +29,12 @@
     ),
     'a:active' => array(
       'color' => '_themename_accent_color'
+    ),
+    '.c-post.format-link .c-post__excerpt p' => array(
+      'background-color' => '_themename_accent_color'
+    ),
+    '.c-post.format-quote blockquote' => array(
+      'background-color' => '_themename_accent_color'
     )
   );
 
